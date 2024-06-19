@@ -168,11 +168,3 @@ agent = (
 
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 
-
-if __name__ == "__main__":
-    from langchain.tools import list
-
-    # Main loop to prompt the user
-    while True:
-        user_prompt = input("Prompt: ")
-        list(agent_executor.stream({"input": user_prompt}))
